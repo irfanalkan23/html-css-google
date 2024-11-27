@@ -1,0 +1,213 @@
+/* id (#) over class (.) over tags */
+
+/* reset default settings of tags */
+* {
+    box-sizing: border-box; /* width of of the element not outside */
+    margin: 0;  /* margin is the spaces outside of the container away from other element containers */
+    padding: 0;  /* padding is the spaces INSIDE of the container away from the content */
+    font-family: 'Inter', sans-serif;
+    color: #0f172a;
+}
+
+body {
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* body expands as big as the "view height". 
+                        body occupies the entire page*/ 
+}
+
+button {
+    cursor: pointer;    /* change cursor to pointer when hovering over buttons */
+}
+
+.google-header {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* default header orientation is vertical */
+header {
+    display: flex;  /* default flex orientation is horizontal (row) */
+    align-items: center; /* align div and nav vertically in the middle */
+    justify-content: space-between; /* push div and nav to the ends */
+    padding: 1rem;
+    gap: 1rem; /* space between the items in the containers ???*/
+}
+
+/* div and nav are row orientation by default */
+.nav-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;  /* space between the items in the containers */
+}
+
+/* links are purple or blue by default */
+.text-link,
+footer a {
+    color: inherit; /* inherit from the entire document */
+    text-decoration: none;  /* delete the underline */
+}
+
+.text-link:hover,
+footer a:hover {
+    text-decoration: underline; /* underline when hovering */
+}
+
+.nav-container-second .text-link {
+    display: none;
+}
+
+.icon-link {
+    font-size: 1rem;
+    color: inherit; 
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.icon-link:hover {
+    background: rgb(235, 235, 235);
+}
+
+.img-button {
+    border: none;
+    background: transparent;
+}
+
+.img-button img {
+    width: 30px;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+/* GOOD TEMPLATE */
+main {
+    flex: 1;    /* default is 0. Now main is as greedy as possible.
+                and pushes the footer to the bottom.
+                this is used with body min-height: 100vh; */
+    display: flex;  /* vertical by default */
+    flex-direction: column; 
+    justify-content: center;    /* center content vertically */
+    align-items: center;    /* center content horizontally */
+    gap: 2rem;
+    padding: 4rem 1rem;  /* padding from sides */
+}
+
+.title-text {
+    font-size: 3rem;
+}
+
+.input-bar {
+    display: flex;  /* input bar items aligned in a row!!! */
+    align-items: center;
+    gap: 1rem;
+    width: 100%;    /* expand to full width */
+    /* but now the width is too much, so we define max width */
+    max-width: 500px;
+    border: 4px solid rgb(235, 235, 235);
+    padding: 1rem;
+    border-radius: 1rem;    /* round the corners */
+}
+
+.input-bar:hover,
+.input-bar:focus-within {   /* when input within the container is the focus, means input is clicked */
+    box-shadow: 0 0 4px 1px rgb(235, 235, 235); /* offset-x offset-y blur-radius spread-radius color */
+}
+
+.input-bar input {
+    flex: 1;    /* occupy max size and push other items to the sides */
+    border: none; /* get rid of input bar border */
+    outline: none;  
+    width: 100%;    /* only take 100% of the space, no more no less
+    so the icons in the bar don't get out of the visual area when narrowed */
+}
+
+.input-bar div {    /* target mic and cam */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.input-icon {
+    background: transparent;
+    border: none;
+}
+
+.input-icon:hover {
+    opacity: 0.6;   /* 0 is fully transparent */
+}
+
+.button-grid {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.button-grid button {
+    padding: 0.5rem 1rem; /* vertical and horizontal */
+    border: 1px solid transparent;  /* prevents the jumping when hovering over. so border exists, but only changes color when hovering over */
+    background: rgb(247, 247, 247);
+    border-radius: 0.25rem;
+
+}
+
+.button-grid button:hover {
+    border: 1px solid slategray;
+}
+
+.language-text {
+    font-size: 0.7rem;
+}
+
+.language-link {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer; 
+}
+
+.language-link:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: rgb(244, 244, 244);
+    font-size: 0.7;
+}
+
+footer > div {    /* apply only to the direct descendants of footer */
+    padding: 1rem;
+}
+
+.footer-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) { /* for big screens */
+    footer {
+        font-size: 0.8;
+    }
+
+    .footer-grid {
+        display: flex;        
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav-container-second .text-link {
+        display: block;
+    }
+}
